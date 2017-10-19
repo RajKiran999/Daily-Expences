@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Projects" max_length="40" name="x_67546_daily_expe_projects" sizeclass="1" type="collection">
+        <element label="Project Location" max_length="32" name="project_location" reference="cmn_location" type="reference"/>
+        <element display="true" label="Project Name" max_length="150" name="project_name" type="string"/>
+    </element>
+</database>

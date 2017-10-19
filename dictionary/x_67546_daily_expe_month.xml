@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Month" max_length="40" name="x_67546_daily_expe_month" type="collection">
+        <element display="true" label="month" max_length="50" name="month" type="string"/>
+    </element>
+</database>

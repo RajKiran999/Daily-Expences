@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Daily Expences" max_length="40" name="x_67546_daily_expe_daily_expences" type="collection">
+        <element label="Amount" max_length="20" name="amount" type="currency"/>
+        <element label="Attachment" max_length="40" name="attachment" type="user_image"/>
+        <element label="Comments" max_length="300" name="comments" type="string"/>
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element choice="1" label="Expences Type" max_length="40" name="expences_type" type="choice">
+            <choice>
+                <element label="Bus Fare" sequence="0" value="bus_fare"/>
+                <element label="Auto Fare" sequence="1" value="auto_fare"/>
+                <element label="Flight Fare" sequence="2" value="flight_fare"/>
+                <element label="Train Fare" sequence="3" value="train_fare"/>
+                <element label="Cab Fare" sequence="4" value="cab_fare"/>
+                <element label="Petrol" sequence="5" value="petrol"/>
+                <element label="PG Rent" sequence="6" value="pg_rent"/>
+                <element label="Hotel Rent" sequence="7" value="hotel_rent"/>
+                <element label="House Rent" sequence="8" value="house_rent"/>
+                <element label="Food Expenses" sequence="9" value="food_expenses"/>
+                <element label="Certification Fee" sequence="10" value="certification_fee"/>
+                <element label="Other Expenses" sequence="11" value="other_expenses"/>
+            </choice>
+        </element>
+        <element default="javascript:parent.month.getDisplayValue()" label="Month" max_length="50" name="month" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element default="javascript:parent.number" label="Parent Ticket" max_length="32" name="parent_ticket" reference="x_67546_daily_expe_expenses_details" type="reference"/>
+        <element label="Project Name" max_length="32" name="project_name" reference="x_67546_daily_expe_projects" type="reference"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="javascript:parent.year.getDisplayValue()" label="Year" max_length="50" name="year" type="string"/>
+        <index name="index">
+            <element name="employee_name"/>
+        </index>
+        <index name="index2">
+            <element name="project_name"/>
+        </index>
+        <index name="index3">
+            <element name="parent_ticket"/>
+        </index>
+    </element>
+</database>
