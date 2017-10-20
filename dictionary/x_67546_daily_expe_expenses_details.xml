@@ -2,7 +2,9 @@
 <database>
     <element label="Monthly Expenses" max_length="40" name="x_67546_daily_expe_expenses_details" type="collection">
         <element label="Advance Amount" max_length="20" name="advance_amount" type="currency"/>
+        <element label="Amount Release Date" max_length="40" name="amount_release_date" type="glide_date"/>
         <element label="Balance Amount" max_length="20" name="balance_amount" type="currency"/>
+        <element label="Comments" max_length="1000" name="comments" type="journal"/>
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element label="Month" max_length="32" name="month" reference="x_67546_daily_expe_month" type="reference"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
@@ -10,13 +12,16 @@
             <choice>
                 <element label="Draft" sequence="0" value="1"/>
                 <element label="Requested" sequence="1" value="2"/>
-                <element label="Manager Approval" sequence="2" value="3"/>
+                <element label="Manager Approved" sequence="2" value="3"/>
                 <element label="Manager Rejected" sequence="3" value="4"/>
                 <element label="Finance Team Approved" sequence="4" value="5"/>
                 <element label="Finance Team Rejected" sequence="5" value="6"/>
+                <element label="Claim about to release" sequence="6" value="7"/>
+                <element label="Fund Released" sequence="7" value="8"/>
+                <element label="Closed" sequence="8" value="9"/>
             </choice>
         </element>
-        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
         <element label="Total Amount" max_length="20" name="total_amount" type="currency"/>
         <element label="Year" max_length="32" name="year" reference="x_67546_daily_expe_year" type="reference"/>
         <index name="index">
