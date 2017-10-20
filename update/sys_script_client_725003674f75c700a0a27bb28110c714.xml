@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>amount</field>
+        <global>true</global>
+        <messages/>
+        <name>Show message to attach files</name>
+        <order>220</order>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+	//alert(newValue.split(";")[1]);
+if(parseFloat(newValue.split(";")[1]) > 200){
+	g_form.setMandatory('comments',true);
+	//alert("amount");
+	g_form.showFieldMsg('amount','Please attach a documented proof for the amount you specified, before you submit');
+}
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-20 13:06:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>725003674f75c700a0a27bb28110c714</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>Show message to attach files</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
+        <sys_update_name>sys_script_client_725003674f75c700a0a27bb28110c714</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-10-20 14:00:28</sys_updated_on>
+        <table>x_67546_daily_expe_daily_expences</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

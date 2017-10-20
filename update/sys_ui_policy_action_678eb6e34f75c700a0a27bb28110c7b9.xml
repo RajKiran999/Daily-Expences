@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_ui_policy_action">
     <sys_ui_policy_action action="INSERT_OR_UPDATE">
-        <disabled>true</disabled>
-        <field>total_amount</field>
+        <disabled>false</disabled>
+        <field>amount_release_date</field>
         <mandatory>ignore</mandatory>
         <sys_class_name>sys_ui_policy_action</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2017-10-18 12:53:50</sys_created_on>
-        <sys_id>b01b20c74f394700a0a27bb28110c769</sys_id>
+        <sys_created_on>2017-10-20 12:55:22</sys_created_on>
+        <sys_id>678eb6e34f75c700a0a27bb28110c7b9</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>total_amount</sys_name>
+        <sys_name>amount_release_date</sys_name>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
         <sys_policy/>
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
-        <sys_update_name>sys_ui_policy_action_b01b20c74f394700a0a27bb28110c769</sys_update_name>
+        <sys_update_name>sys_ui_policy_action_678eb6e34f75c700a0a27bb28110c7b9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-18 12:53:50</sys_updated_on>
+        <sys_updated_on>2017-10-20 12:55:22</sys_updated_on>
         <table>x_67546_daily_expe_expenses_details</table>
-        <ui_policy display_value="Monthly expenses default readonly and mandatory">8d0a28874f394700a0a27bb28110c7f6</ui_policy>
+        <ui_policy display_value="amount release date editableto finance team only">4fbdb6e34f75c700a0a27bb28110c7b4</ui_policy>
         <visible>ignore</visible>
     </sys_ui_policy_action>
 </record_update>
