@@ -7,7 +7,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -31,13 +31,16 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	
 	// Add your code here
-	var attachRec = new GlideRecord("sys_attachment");
-	attachRec.addQuery("table_name", current.getTableName());
-	attachRec.addQuery("table_sys_id", current.sys_id);
-	attachRec.query();
-	if (!attachRec.next()) {
-		gs.addErrorMessage("Please attach a documented proof.");
-		current.setAbortAction(true);
+	var amt = current.amount.getCurrencyValue();
+	if(parseFloat(amt) > 200){
+		var attachRec = new GlideRecord("sys_attachment");
+		attachRec.addQuery("table_name", current.getTableName());
+		attachRec.addQuery("table_sys_id", current.sys_id);
+		attachRec.query();
+		if (!attachRec.next()) {
+			gs.addErrorMessage("Please attach a documented proof.");
+			current.setAbortAction(true);
+		}
 	}
 	
 })(current, previous);]]></script>
@@ -47,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8c0b36634f75c700a0a27bb28110c79b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>ask attachment when amount is greter 200</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
@@ -55,7 +58,7 @@
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
         <sys_update_name>sys_script_8c0b36634f75c700a0a27bb28110c79b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-20 12:43:09</sys_updated_on>
+        <sys_updated_on>2017-10-20 18:39:23</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

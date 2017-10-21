@@ -23,8 +23,14 @@
         <name>Reject</name>
         <onclick/>
         <order>300</order>
-        <script><![CDATA[current.state = 4;
-current.update();]]></script>
+        <script><![CDATA[// current.state = 4;
+// current.update();
+var sa = new GlideRecord('sysapproval_approver');
+sa.addQuery('document_id',current.sys_id);
+sa.query();
+sa.next();
+sa.state = "rejected";
+sa.update();]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
         <show_query>false</show_query>
@@ -35,7 +41,7 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>e3ac1de34f31c700a0a27bb28110c7cc</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Reject</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
@@ -43,7 +49,7 @@ current.update();]]></script>
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
         <sys_update_name>sys_ui_action_e3ac1de34f31c700a0a27bb28110c7cc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-20 09:26:51</sys_updated_on>
+        <sys_updated_on>2017-10-20 20:19:07</sys_updated_on>
         <table>x_67546_daily_expe_expenses_details</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
