@@ -22,19 +22,30 @@
                 <element label="Other Expenses" sequence="11" value="other_expenses"/>
             </choice>
         </element>
+        <element label="From Location" max_length="32" name="from_location" reference="cmn_location" type="reference"/>
+        <element label="Is File Attached" max_length="40" name="is_file_attached" type="boolean"/>
         <element default="javascript:parent.month.getDisplayValue()" label="Month" max_length="50" name="month" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Number of Persons" max_length="40" name="number_of_persons" type="integer"/>
         <element default="javascript:parent.number" label="Parent Ticket" max_length="32" name="parent_ticket" reference="x_67546_daily_expe_expenses_details" type="reference"/>
         <element label="Project Name" max_length="32" name="project_name" reference="x_67546_daily_expe_projects" type="reference"/>
+        <element label="Reciept Number" max_length="50" name="reciept_number" type="string"/>
         <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>
+        <element label="To Location" max_length="32" name="to_location" reference="cmn_location" type="reference"/>
         <element default="javascript:parent.year.getDisplayValue()" label="Year" max_length="50" name="year" type="string"/>
         <index name="index">
-            <element name="employee_name"/>
+            <element name="to_location"/>
         </index>
         <index name="index2">
-            <element name="project_name"/>
+            <element name="from_location"/>
         </index>
         <index name="index3">
+            <element name="employee_name"/>
+        </index>
+        <index name="index4">
+            <element name="project_name"/>
+        </index>
+        <index name="index5">
             <element name="parent_ticket"/>
         </index>
     </element>

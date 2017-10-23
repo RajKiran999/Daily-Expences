@@ -19,6 +19,8 @@
                 <element label="Claim about to release" sequence="6" value="7"/>
                 <element label="Fund Released" sequence="7" value="8"/>
                 <element label="Closed" sequence="8" value="9"/>
+                <element label="CEO or Manager of Manager Rejected" sequence="9" value="10"/>
+                <element label="More Information Required" sequence="11" value="11"/>
             </choice>
         </element>
         <element default="javascript:current.getTableName();" dynamic_default_value="b5cb83a85f220100a9ad2572f2b4773c" label="Class" max_length="80" name="sys_class_name" type="sys_class_name" use_dynamic_default="true"/>

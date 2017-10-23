@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_ng_action">
+    <sys_ui_ng_action action="INSERT_OR_UPDATE">
+        <action_name/>
+        <active>true</active>
+        <color/>
+        <comments/>
+        <condition>!current.isNewRecord() &amp;&amp; (new global.Workflow().hasWorkflow(current))</condition>
+        <form_button>true</form_button>
+        <form_more_item>true</form_more_item>
+        <hide_when_disabled>false</hide_when_disabled>
+        <hint/>
+        <list_button>true</list_button>
+        <name>Show Workflow</name>
+        <navigate_back>false</navigate_back>
+        <order>800</order>
+        <script><![CDATA[showWorkflowContext();
+
+// Show the workflow context in a new window
+function showWorkflowContext() {
+   var id = g_form.getUniqueValue().toString();
+   var url = new GlideURL('context_workflow.do');
+   url.addParam('sysparm_stack', 'no');
+   url.addParam('sysparm_table', g_form.getTableName());
+   url.addParam('sysparm_document', id);
+   g_navigation.open(url.getURL(), "_blank");
+}]]></script>
+        <show_for>any</show_for>
+        <sys_class_name>sys_ui_ng_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-23 03:48:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7cfd94e04f0a4b00a0a27bb28110c7d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show Workflow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
+        <sys_update_name>sys_ui_ng_action_7cfd94e04f0a4b00a0a27bb28110c7d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-10-23 03:48:22</sys_updated_on>
+        <table>x_67546_daily_expe_expenses_details</table>
+    </sys_ui_ng_action>
+</record_update>

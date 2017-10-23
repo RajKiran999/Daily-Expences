@@ -44,6 +44,7 @@
 		}
 		else{
 			count++;
+			current.is_file_attached = true;
 		}
 		
 	}
@@ -82,7 +83,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>99ff2c8b4f394700a0a27bb28110c796</sys_id>
-        <sys_mod_count>33</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>find the total and ask for attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
@@ -90,7 +91,7 @@
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
         <sys_update_name>sys_script_99ff2c8b4f394700a0a27bb28110c796</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-20 18:47:48</sys_updated_on>
+        <sys_updated_on>2017-10-21 15:25:22</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

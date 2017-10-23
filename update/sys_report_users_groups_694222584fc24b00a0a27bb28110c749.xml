@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Employee month wise expenses">e14222584fc24b00a0a27bb28110c749</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-22 18:46:53</sys_created_on>
+        <sys_id>694222584fc24b00a0a27bb28110c749</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>e14222584fc24b00a0a27bb28110c749</sys_name>
+        <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
+        <sys_update_name>sys_report_users_groups_694222584fc24b00a0a27bb28110c749</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-10-22 18:46:53</sys_updated_on>
+        <user_id display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user_id>
+    </sys_report_users_groups>
+</record_update>
