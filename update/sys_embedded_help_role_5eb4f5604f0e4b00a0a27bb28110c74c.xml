@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_168180_travel_re.user" name="x_168180_travel_re.user">88a6c185db3103002a9c773ebf9619c7</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2017-10-23 10:06:21</sys_created_on>
+        <sys_id>5eb4f5604f0e4b00a0a27bb28110c74c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>88a6c185db3103002a9c773ebf9619c7</sys_name>
+        <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
+        <sys_update_name>sys_embedded_help_role_5eb4f5604f0e4b00a0a27bb28110c74c</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-10-23 10:06:21</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
