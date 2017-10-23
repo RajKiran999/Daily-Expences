@@ -2,5 +2,6 @@
 <database>
     <element label="Month" max_length="40" name="x_67546_daily_expe_month" type="collection">
         <element display="true" label="month" max_length="50" name="month" type="string"/>
+        <element label="value" max_length="40" name="value" type="integer"/>
     </element>
 </database>

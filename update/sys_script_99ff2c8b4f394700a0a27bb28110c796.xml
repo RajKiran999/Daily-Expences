@@ -19,7 +19,7 @@
         <filter_condition/>
         <is_rest>false</is_rest>
         <message/>
-        <name>find the total for all the daily wages</name>
+        <name>find the total and ask for attachment</name>
         <order>200</order>
         <priority>100</priority>
         <rest_method/>
@@ -31,33 +31,50 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 	
 	// Add your code here
+	var count=0;
 	var amount = parseFloat(current.amount.getCurrencyValue());
-	
-	var parent_number = current.parent_ticket.getDisplayValue();
-	var mw_total_amount = 0;
-	var mw_balance_amount = 0;
-	var mw_advance_amount = 0;
-	var mw_number = '';
-	var adv_amt_sym;
-	var mw = new GlideRecord('x_67546_daily_expe_expenses_details');
-	mw.get('number',parent_number);
-	mw.query();
-	while(mw.next()){
-		adv_amt_sym = mw.advance_amount.getCurrencyCode();
-		//gs.addInfoMessage(adv_amt_sym);
-		mw_advance_amount = mw.advance_amount.getCurrencyValue();
-		//mw_balance_amount = mw.balance_amount.getCurrencyValue();
-		mw_total_amount = amount + parseFloat(mw.total_amount.getCurrencyValue());
-		mw.total_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount));
-		mw.balance_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount) - parseFloat(mw_advance_amount));
-		current.amount = adv_amt_sym +";"+ amount;
-		mw.update();
+	if(parseFloat(amount) > 200){
+		var attachRec = new GlideRecord("sys_attachment");
+		attachRec.addQuery("table_name", current.getTableName());
+		attachRec.addQuery("table_sys_id", current.sys_id);
+		attachRec.query();
+		if (!attachRec.next()) {
+			gs.addErrorMessage("Please attach a documented proof.");
+			current.setAbortAction(true);
+		}
+		else{
+			count++;
+			current.is_file_attached = true;
+		}
+		
+	}
+	else{
+		count++;
+	}
+	if(count>0){
+		var parent_number = current.parent_ticket.getDisplayValue();
+		var mw_total_amount = 0;
+		var mw_balance_amount = 0;
+		var mw_advance_amount = 0;
+		var mw_number = '';
+		var adv_amt_sym;
+		var mw = new GlideRecord('x_67546_daily_expe_expenses_details');
+		mw.get('number',parent_number);
+		mw.query();
+		while(mw.next()){
+			adv_amt_sym = mw.advance_amount.getCurrencyCode();
+			//gs.addInfoMessage(adv_amt_sym);
+			mw_advance_amount = mw.advance_amount.getCurrencyValue();
+			//mw_balance_amount = mw.balance_amount.getCurrencyValue();
+			mw_total_amount = amount + parseFloat(mw.total_amount.getCurrencyValue());
+			mw.total_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount));
+			mw.balance_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount) - parseFloat(mw_advance_amount));
+			current.amount = adv_amt_sym +";"+ amount;
+			mw.update();
+		}
 	}
 	
 	
-	//if(current.parent_ticket == mw_number){
-		
-	//}
 	
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -66,15 +83,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>99ff2c8b4f394700a0a27bb28110c796</sys_id>
-        <sys_mod_count>31</sys_mod_count>
-        <sys_name>find the total for all the daily wages</sys_name>
+        <sys_mod_count>34</sys_mod_count>
+        <sys_name>find the total and ask for attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
         <sys_policy/>
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
         <sys_update_name>sys_script_99ff2c8b4f394700a0a27bb28110c796</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-19 09:17:42</sys_updated_on>
+        <sys_updated_on>2017-10-21 15:25:22</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
