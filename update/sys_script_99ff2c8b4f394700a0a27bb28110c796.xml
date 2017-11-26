@@ -62,15 +62,30 @@
 		mw.get('number',parent_number);
 		mw.query();
 		while(mw.next()){
-			adv_amt_sym = mw.advance_amount.getCurrencyCode();
-			//gs.addInfoMessage(adv_amt_sym);
-			mw_advance_amount = mw.advance_amount.getCurrencyValue();
-			//mw_balance_amount = mw.balance_amount.getCurrencyValue();
-			mw_total_amount = amount + parseFloat(mw.total_amount.getCurrencyValue());
-			mw.total_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount));
-			mw.balance_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount) - parseFloat(mw_advance_amount));
-			current.amount = adv_amt_sym +";"+ amount;
-			mw.update();
+			if(current.isNewRecord()){
+				adv_amt_sym = mw.advance_amount.getCurrencyCode();
+				//gs.addInfoMessage(adv_amt_sym);
+				mw_advance_amount = mw.advance_amount.getCurrencyValue();
+				//mw_balance_amount = mw.balance_amount.getCurrencyValue();
+				mw_total_amount = amount + parseFloat(mw.total_amount.getCurrencyValue());
+				mw.total_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount));
+				mw.balance_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount) - parseFloat(mw_advance_amount));
+				current.amount = adv_amt_sym +";"+ amount;
+				mw.update();
+			}
+			else{
+				adv_amt_sym = mw.advance_amount.getCurrencyCode();
+				//gs.addInfoMessage(adv_amt_sym);
+				var old_amount = parseFloat(previous.amount.getCurrencyValue());
+				mw_advance_amount = mw.advance_amount.getCurrencyValue();
+				//mw_balance_amount = mw.balance_amount.getCurrencyValue();
+				mw_total_amount = (amount + parseFloat(mw.total_amount.getCurrencyValue()))-old_amount;
+				mw.total_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount));
+				mw.balance_amount = adv_amt_sym +";"+ (parseFloat(mw_total_amount) - parseFloat(mw_advance_amount));
+				current.amount = adv_amt_sym +";"+ amount;
+				mw.update();
+			}
+			
 		}
 	}
 	
@@ -83,7 +98,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>99ff2c8b4f394700a0a27bb28110c796</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>find the total and ask for attachment</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
@@ -91,7 +106,7 @@
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
         <sys_update_name>sys_script_99ff2c8b4f394700a0a27bb28110c796</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-21 15:25:22</sys_updated_on>
+        <sys_updated_on>2017-11-02 11:35:02</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

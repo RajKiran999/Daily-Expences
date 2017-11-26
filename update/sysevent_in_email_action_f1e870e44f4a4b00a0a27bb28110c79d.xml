@@ -23,8 +23,8 @@
 	gr.get(number);
 	gr.query();
 	while(gr.next()){
-	gr.comments = email.body_text;
-	sysid = gr.sys_id;
+		gr.comments = email.body_text;
+		sysid = gr.sys_id;
 		gr.update();
 	}
 	// Implement email action here
@@ -32,7 +32,7 @@
 	sa.addQuery('document_id',sysid);
 	sa.query();
 	sa.next();
-	sa.state = status;
+	sa.state = 'approved';
 	//sa.comments = comments;
 	sa.update();
 	//gr.update();
@@ -45,7 +45,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>f1e870e44f4a4b00a0a27bb28110c79d</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Manager Approval of daily wages</sys_name>
         <sys_overrides/>
         <sys_package display_value="Daily Expenses" source="x_67546_daily_expe">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_package>
@@ -53,7 +53,7 @@
         <sys_scope display_value="Daily Expenses">1f7eab5a4ffdc300a0a27bb28110c7d3</sys_scope>
         <sys_update_name>sysevent_in_email_action_f1e870e44f4a4b00a0a27bb28110c79d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-10-23 08:05:16</sys_updated_on>
+        <sys_updated_on>2017-10-25 13:32:57</sys_updated_on>
         <table>x_67546_daily_expe_expenses_details</table>
         <template/>
         <type>reply</type>
